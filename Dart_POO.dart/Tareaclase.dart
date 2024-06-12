@@ -1,33 +1,28 @@
 void main(){
 
-Telefono miTelefono = Telefono('Redmi', '22323232323', true);
+Telefono miTelefono = Telefono(marca:"Redmi", numero:"223221123");
 
-print(miTelefono);
+Telefono telefono2 = Telefono.papaya(marca:"motorola");
+
+Telefono telefono3 = Telefono.prueba(numero:"43584555");
+
 print(miTelefono.marca);
-print(miTelefono.numero);
 print(miTelefono.cargaRapida);
 
-miTelefono.marca = 'LG';
-print(miTelefono.marca);
-miTelefono.llamar();
-String numeroTelefono = miTelefono.obtenerNumero();
-print(numeroTelefono);
-
-Telefono  poco= Telefono('LG', '223333323', false);
-
-print(poco);
-print(poco.marca);
-
 }
+
 class Telefono{
   //Atributos
-  String marca;
-  String numero;
-  bool cargaRapida;
+  String? marca;
+  String? numero;
+  bool? cargaRapida;
 
   //Constructor
 
-  Telefono(this.marca, this.numero, this.cargaRapida);
+// Telefono(this.marca, this.numero, )
+  Telefono({this.marca, this.numero});
+  Telefono.papaya({this.marca});
+  Telefono.prueba({this.numero});
 
   //metodos
   void llamar(){
